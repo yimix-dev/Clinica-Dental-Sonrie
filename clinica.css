@@ -15,7 +15,8 @@
       rgba(0, 0, 0, 0.8) 0%,
       rgba(0, 0, 0, 0) 100%
     ),
-    url("assets/inicio-fondo.webp");
+    /* linear-gradient(to bottom, transparent 92%, #f0f9ff 100%), */
+      url("assets/inicio-fondo.webp");
 
   background-size: cover;
   background-position: center;
@@ -106,5 +107,33 @@ header {
   text-wrap: balance;
 }
 #nosotros {
-  background-color: #0a2540;
+  min-height: 100vh;
+  background-color: #f0f9ff;
+  /* height: auto; */
+  padding: 100px;
+  margin-bottom: 100px;
+}
+.header-nosotros {
+  background-color: #f0f9ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#titulo-nosotros {
+  font-family: var(--fuente-principal);
+  font-weight: 800;
+  color: #0a2540;
+  font-size: 3rem;
+}
+
+/* .header-nosotros */
+/* hacer display flex aqui despues de terminar el header */
+
+.parrafo-header-nosotros {
+  color: #475569;
+  font-family: var(--fuente-secundaria);
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-wrap: balance;
 }
