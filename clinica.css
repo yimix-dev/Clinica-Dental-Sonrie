@@ -1,0 +1,110 @@
+:root {
+  --fuente-principal: "Helvetica Neue", Arial, sans-serif;
+  --fuente-secundaria: "Segoe UI", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.inicio {
+  min-height: 100vh;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("assets/inicio-fondo.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 1.5rem 4rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--fuente-secundaria);
+  font-weight: 550;
+  font-size: 1rem;
+}
+
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  width: clamp(120px, 10vw, 250px);
+  height: auto;
+
+  z-index: 2;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+}
+
+.contenido-inicio {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 2rem;
+}
+
+.textos-inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 600px;
+  color: #ffffff;
+  gap: 2.5rem;
+}
+
+.agendar-inicio {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #00a3e0;
+  color: #0a2540;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-family: var(--fuente-secundaria);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+#titulo-inicio {
+  font-family: var(--fuente-principal);
+  font-weight: 600;
+  font-size: clamp(1rem, 4vw, 4rem);
+  color: #f0f9ff;
+  text-wrap: balance;
+}
+.parrafo-inicio {
+  font-family: var(--fuente-secundaria);
+  font-weight: 600;
+  font-size: 1rem;
+  text-wrap: balance;
+}
+#nosotros {
+  background-color: #0a2540;
+}
