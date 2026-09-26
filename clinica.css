@@ -108,32 +108,40 @@ header {
 }
 #nosotros {
   min-height: 100vh;
-  background-color: #f0f9ff;
-  /* height: auto; */
-  padding: 100px;
+  background-color: #ffffff; /* Ajusta a #f0f9ff si prefieres fondo celeste suave */
+  padding: 80px 20px;
   margin-bottom: 100px;
 }
+
 .header-nosotros {
-  background-color: #f0f9ff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 #titulo-nosotros {
   font-family: var(--fuente-principal);
   font-weight: 800;
   color: #0a2540;
-  font-size: 3rem;
+  font-size: 2.75rem;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* .header-nosotros */
-/* hacer display flex aqui despues de terminar el header */
+#titulo-nosotros span {
+  color: #1d6bf3;
+  display: block;
+}
 
 .parrafo-header-nosotros {
-  color: #475569;
+  color: #64748b;
   font-family: var(--fuente-secundaria);
-  font-weight: 500;
-  font-size: 1.5rem;
-  text-wrap: balance;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
 }
