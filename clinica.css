@@ -145,3 +145,83 @@ header {
   margin: 0 auto;
   text-align: center;
 }
+/* Contenedor principal de las tarjetas */
+.contenedor-tarjetas-nosotros {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap; /* Permite que en pantallas pequeñas se pongan una sobre otra */
+}
+
+/* Estilo individual de la tarjeta */
+.tarjeta-nosotros {
+  flex: 1;
+  min-width: 280px; /* Ancho mínimo para adaptarse a móviles */
+  background-color: #f0f9ff; /* Fondo blanco */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 36px 32px;
+  text-align: left; /* Alineación del texto a la izquierda */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Sombra muy suave y limpia */
+  border: 1px solid #c9cfd6; /* Borde sutil opcional */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el cursor (opcional) */
+.tarjeta-nosotros:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+}
+
+/* Círculo para el icono */
+.icono-tarjeta {
+  width: 48px;
+  height: 48px;
+  background-color: #e0f2fe; /* Azul claro de fondo */
+  border-radius: 50%; /* Círculo perfecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+/* Título dentro de la tarjeta */
+.tarjeta-nosotros h3 {
+  font-family: var(--fuente-principal);
+  color: #0a2540; /* Azul oscuro potente */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+/* Texto o párrafo */
+.tarjeta-nosotros p {
+  color: #64748b; /* Gris azulado suave */
+  font-family: var(--fuente-secundaria);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+/* Contenedor circular del icono */
+.icono-tarjeta {
+  width: 52px;
+  height: 52px;
+  background-color: #e0f2fe; /* Fondo celeste claro */
+  border-radius: 50%; /* Lo convierte en círculo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+/* Control exacto de la imagen del icono */
+.icono-tarjeta img {
+  width: 26px; /* Ajusta el tamaño del icono según lo necesites */
+  height: 26px; /* Mantén la misma dimensión para relación 1:1 */
+  object-fit: contain; /* Garantiza que la imagen no se deforme ni distorsione */
+  display: block;
+  user-select: none; /* Opcional: evita que el usuario arrastre la imagen */
+}
