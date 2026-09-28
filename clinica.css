@@ -15,8 +15,7 @@
       rgba(0, 0, 0, 0.8) 0%,
       rgba(0, 0, 0, 0) 100%
     ),
-    /* linear-gradient(to bottom, transparent 92%, #f0f9ff 100%), */
-      url("assets/inicio-fondo.webp");
+    url("assets/inicio-fondo.webp");
 
   background-size: cover;
   background-position: center;
@@ -107,7 +106,7 @@ header {
   text-wrap: balance;
 }
 #nosotros {
-  min-height: 100vh;
+  height: auto;
   background-color: #ffffff; /* Ajusta a #f0f9ff si prefieres fondo celeste suave */
   padding: 80px 20px;
   margin-bottom: 100px;
@@ -224,4 +223,179 @@ header {
   object-fit: contain; /* Garantiza que la imagen no se deforme ni distorsione */
   display: block;
   user-select: none; /* Opcional: evita que el usuario arrastre la imagen */
+}
+
+.titulo-servicios {
+  font-family: var(--fuente-principal);
+  font-weight: 800;
+  color: #0a2540;
+  font-size: 2.75rem;
+  line-height: 1.25;
+}
+
+/* Contenedor Principal */
+.services-carousel-section {
+  width: 100%;
+  overflow: hidden; /* Evita desbordes horizontales */
+  padding: 40px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  text-align: center;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* El contenedor del carrusel */
+.carousel-container {
+  display: flex;
+  gap: 30px;
+  overflow-x: hidden; /* Ocultamos barra, navegamos solo con botones */
+  /* Padding crucial: permite que la tarjeta 1 y la última se centren (320px ancho tarjeta / 2 = 160px) */
+  padding: 60px calc(50% - 160px);
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+/* Tarjetas base */
+.service-card {
+  flex: 0 0 320px; /* Ancho fijo para cada tarjeta */
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #0f172a;
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: center;
+  transition: transform 0.5s ease;
+}
+
+/* Imagen en tarjeta */
+.service-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* === ESTILOS PARA TARJETAS NO ACTIVAS (Desenfocadas) === */
+.service-card:not(.active) {
+  transform: scale(0.85); /* Se encogen un poco */
+  opacity: 0.8;
+}
+
+/* Desenfoque solo al cuerpo, NO al título */
+.service-card:not(.active) .card-body {
+  filter: blur(4px);
+  pointer-events: none; /* No se puede interactuar con lo borroso */
+}
+
+/* === ESTILOS PARA LA TARJETA CENTRAL (Activa) === */
+.service-card.active {
+  transform: scale(1.1); /* Se amplía */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border: 1px solid #0284c7;
+  z-index: 2;
+}
+
+.service-card.active .card-body {
+  filter: blur(0px); /* 0 desenfoque */
+}
+
+/* Animación del contenido extra (párrafo extra y botón) */
+.extra-content-wrapper {
+  display: grid;
+  grid-template-rows: 0fr; /* Oculto por defecto usando Grid */
+  transition: grid-template-rows 0.5s ease;
+}
+
+.extra-content {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.2s; /* Se desvanece con un pequeño retraso */
+}
+
+.service-card.active .extra-content-wrapper {
+  grid-template-rows: 1fr; /* Muestra el contenido suavemente */
+}
+
+.service-card.active .extra-content {
+  opacity: 1;
+  padding-top: 15px;
+}
+
+.detail-text {
+  font-size: 0.9rem;
+  color: #334155;
+  margin-bottom: 15px;
+}
+
+.action-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.action-btn:hover {
+  background-color: #0369a1;
+}
+
+/* Botones Laterales */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0284c7;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.prev-btn {
+  left: -25px;
+}
+.next-btn {
+  right: -25px;
+}
+
+@media (max-width: 768px) {
+  .prev-btn {
+    left: 10px;
+  }
+  .next-btn {
+    right: 10px;
+  }
 }

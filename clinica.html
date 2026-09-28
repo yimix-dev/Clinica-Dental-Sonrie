@@ -88,64 +88,189 @@
       <!-- ==================== SERVICIOS ==================== -->
       <section id="servicios" aria-labelledby="titulo-servicios">
         <div>
-          <p>Lo que ofrecemos</p>
+          <h2 class="titulo-servicios">Nuestros servicios</h2>
 
-          <h2 id="titulo-servicios">Nuestros servicios</h2>
-
-          <p>
+          <p class="parrafo-header-servicios">
             Tratamientos diseñados para mantener tu salud bucal y mejorar la
             apariencia de tu sonrisa.
           </p>
         </div>
 
-        <div>
-          <article>
-            <h3>Limpieza dental</h3>
-            <p>
-              Eliminación profesional de placa y sarro para mantener una buena
-              higiene bucal.
-            </p>
-          </article>
+        <section class="services-carousel-section">
+          <div class="carousel-wrapper">
+            <!-- Botón Izquierdo -->
+            <button
+              class="carousel-btn prev-btn"
+              id="prevBtn"
+              aria-label="Anterior"
+            >
+              &#10094;
+            </button>
 
-          <article>
-            <h3>Ortodoncia</h3>
-            <p>
-              Tratamientos para corregir la posición de los dientes y mejorar la
-              mordida.
-            </p>
-          </article>
+            <!-- Contenedor del Carrusel -->
+            <div class="carousel-container" id="carouselContainer">
+              <article class="service-card">
+                <h3>Limpieza dental</h3>
+                <div class="card-body">
+                  <p>
+                    Eliminación profesional de placa y sarro para mantener una
+                    buena higiene bucal.
+                  </p>
+                  <img
+                    src="./assets/placeholder-limpieza.jpg"
+                    alt="Limpieza dental"
+                    class="service-img"
+                  />
 
-          <article>
-            <h3>Blanqueamiento dental</h3>
-            <p>
-              Tratamiento estético para lograr una sonrisa más clara y luminosa.
-            </p>
-          </article>
+                  <!-- Contenido extra que se expande -->
+                  <div class="extra-content-wrapper">
+                    <div class="extra-content">
+                      <p class="detail-text">
+                        Nuestra limpieza profunda utiliza tecnología ultrasonido
+                        para proteger tus encías y prevenir enfermedades a largo
+                        plazo.
+                      </p>
+                      <button class="action-btn">Agendar Limpieza</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
 
-          <article>
-            <h3>Restauraciones dentales</h3>
-            <p>
-              Tratamiento de dientes dañados mediante restauraciones funcionales
-              y estéticas.
-            </p>
-          </article>
+              <article class="service-card">
+                <h3>Ortodoncia</h3>
+                <div class="card-body">
+                  <p>
+                    Tratamientos para corregir la posición de los dientes y
+                    mejorar la mordida.
+                  </p>
+                  <img
+                    src="./assets/placeholder-ortodoncia.jpg"
+                    alt="Ortodoncia"
+                    class="service-img"
+                  />
 
-          <article>
-            <h3>Odontología infantil</h3>
-            <p>
-              Atención dental adaptada a las necesidades de niños y
-              adolescentes.
-            </p>
-          </article>
+                  <div class="extra-content-wrapper">
+                    <div class="extra-content">
+                      <p class="detail-text">
+                        Ofrecemos opciones de brackets metálicos, estéticos y
+                        alineadores invisibles personalizados para tu sonrisa.
+                      </p>
+                      <button class="action-btn">Cotizar Ortodoncia</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
 
-          <article>
-            <h3>Evaluación dental</h3>
-            <p>
-              Evaluación del estado general de la salud bucal para determinar el
-              tratamiento adecuado.
-            </p>
-          </article>
-        </div>
+              <article class="service-card">
+                <h3>Blanqueamiento dental</h3>
+                <div class="card-body">
+                  <p>
+                    Tratamiento estético para lograr una sonrisa más clara y
+                    luminosa.
+                  </p>
+                  <img
+                    src="./assets/placeholder-blanqueamiento.jpg"
+                    alt="Blanqueamiento"
+                    class="service-img"
+                  />
+
+                  <div class="extra-content-wrapper">
+                    <div class="extra-content">
+                      <p class="detail-text">
+                        Resultados visibles desde la primera sesión con
+                        productos seguros que no dañan tu esmalte.
+                      </p>
+                      <button class="action-btn">Saber más</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="service-card">
+                <h3>Restauraciones dentales</h3>
+                <div class="card-body">
+                  <p>
+                    Tratamiento de dientes dañados mediante restauraciones
+                    funcionales y estéticas.
+                  </p>
+                  <img
+                    src="./assets/placeholder-restauracion.jpg"
+                    alt="Restauraciones"
+                    class="service-img"
+                  />
+
+                  <div class="extra-content-wrapper">
+                    <div class="extra-content">
+                      <p class="detail-text">
+                        Utilizamos resinas de alta calidad del mismo color de tu
+                        diente para un acabado 100% natural.
+                      </p>
+                      <button class="action-btn">Consultar Caso</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="service-card">
+                <h3>Odontología infantil</h3>
+                <div class="card-body">
+                  <p>
+                    Atención dental adaptada a las necesidades de niños y
+                    adolescentes.
+                  </p>
+                  <img
+                    src="./assets/placeholder-infantil.jpg"
+                    alt="Odontología Infantil"
+                    class="service-img"
+                  />
+
+                  <div class="extra-content-wrapper">
+                    <div class="extra-content">
+                      <p class="detail-text">
+                        Creamos un ambiente libre de estrés para que la visita
+                        al dentista sea una experiencia divertida y educativa.
+                      </p>
+                      <button class="action-btn">Agendar Cita Infantil</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="service-card">
+                <h3>Evaluación dental</h3>
+                <div class="card-body">
+                  <p>
+                    Evaluación del estado general de la salud bucal para
+                    determinar el tratamiento adecuado.
+                  </p>
+                  <img
+                    src="./assets/placeholder-evaluacion.jpg"
+                    alt="Evaluación"
+                    class="service-img"
+                  />
+
+                  <div class="extra-content-wrapper">
+                    <div class="extra-content">
+                      <p class="detail-text">
+                        Incluye diagnóstico completo, radiografías panorámicas y
+                        un plan de tratamiento detallado.
+                      </p>
+                      <button class="action-btn">Agendar Evaluación</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- Botón Derecho -->
+            <button
+              class="carousel-btn next-btn"
+              id="nextBtn"
+              aria-label="Siguiente"
+            >
+              &#10095;
+            </button>
+          </div>
+        </section>
       </section>
 
       <!-- ==================== DOCTORES ==================== -->
@@ -439,5 +564,6 @@
 
       <p>&copy; 2026 Clínica Dental Sonríe. Todos los derechos reservados.</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
