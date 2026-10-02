@@ -9,7 +9,6 @@
 }
 .inicio {
   min-height: 100vh;
-
   background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.8) 0%,
@@ -107,7 +106,7 @@ header {
 }
 #nosotros {
   height: auto;
-  background-color: #ffffff; /* Ajusta a #f0f9ff si prefieres fondo celeste suave */
+  background-color: #f0f9ff;
   padding: 80px 20px;
   margin-bottom: 100px;
 }
@@ -133,9 +132,8 @@ header {
   color: #1d6bf3;
   display: block;
 }
-
 .parrafo-header-nosotros {
-  color: #64748b;
+  color: #0a2540;
   font-family: var(--fuente-secundaria);
   font-weight: 400;
   font-size: 1.3rem;
@@ -161,7 +159,7 @@ header {
   min-width: 280px; /* Ancho mínimo para adaptarse a móviles */
   background-color: #f0f9ff; /* Fondo blanco */
   border-radius: 20px; /* Bordes redondeados */
-  padding: 36px 32px;
+  padding: 40px 40px;
   text-align: left; /* Alineación del texto a la izquierda */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Sombra muy suave y limpia */
   border: 1px solid #c9cfd6; /* Borde sutil opcional */
@@ -198,7 +196,7 @@ header {
 
 /* Texto o párrafo */
 .tarjeta-nosotros p {
-  color: #64748b; /* Gris azulado suave */
+  color: #474c53; /* Gris azulado suave */
   font-family: var(--fuente-secundaria);
   font-size: 1rem;
   line-height: 1.6;
@@ -231,105 +229,190 @@ header {
   color: #0a2540;
   font-size: 2.75rem;
   line-height: 1.25;
+  text-align: center;
+}
+.parrafo-header-servicios {
+  color: #0a2540;
+  font-family: var(--fuente-secundaria);
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+  text-wrap: balance;
+}
+:root {
+  --carousel-max-width: 1000px;
+  --carousel-card-width: 320px;
+  --carousel-gap: 30px;
+
+  --carousel-primary: #0284c7;
+  --carousel-primary-dark: #0369a1;
+
+  --carousel-text: #0f172a;
+  --carousel-text-secondary: #334155;
+
+  --carousel-border: #cbd5e1;
+
+  --carousel-radius: 16px;
+  --carousel-button-size: 50px;
+}
+/* =========================================================
+     BOX SIZING
+     ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* Contenedor Principal */
+/* =========================================================
+     CONTENEDOR PRINCIPAL
+     ========================================================= */
+
 .services-carousel-section {
   width: 100%;
-  overflow: hidden; /* Evita desbordes horizontales */
+  overflow: hidden;
   padding: 40px 0;
   font-family: system-ui, -apple-system, sans-serif;
   text-align: center;
 }
 
+/* =========================================================
+     WRAPPER DEL CARRUSEL
+     ========================================================= */
+
 .carousel-wrapper {
   position: relative;
   display: flex;
   align-items: center;
-  max-width: 1000px;
+  width: 100%;
+  max-width: var(--carousel-max-width);
   margin: 0 auto;
 }
 
-/* El contenedor del carrusel */
+/* =========================================================
+     CONTENEDOR DEL CARRUSEL
+     ========================================================= */
+
 .carousel-container {
   display: flex;
-  gap: 30px;
-  overflow-x: hidden; /* Ocultamos barra, navegamos solo con botones */
-  /* Padding crucial: permite que la tarjeta 1 y la última se centren (320px ancho tarjeta / 2 = 160px) */
-  padding: 60px calc(50% - 160px);
-  scroll-behavior: smooth;
+  gap: var(--carousel-gap);
   width: 100%;
+
+  overflow-x: hidden;
+
+  /*
+      Permite centrar la primera y última tarjeta.
+      320px / 2 = 160px
+    */
+  padding: 60px calc(50% - (var(--carousel-card-width) / 2));
+
+  scroll-behavior: smooth;
 }
 
-/* Tarjetas base */
+/* =========================================================
+     TARJETAS
+     ========================================================= */
+
 .service-card {
-  flex: 0 0 320px; /* Ancho fijo para cada tarjeta */
+  flex: 0 0 var(--carousel-card-width);
+
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: var(--carousel-radius);
   padding: 24px;
+
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
   transition: transform 0.5s ease, box-shadow 0.5s ease;
-  box-sizing: border-box;
+
   text-align: left;
 }
 
+/* =========================================================
+     TÍTULO DE TARJETA
+     ========================================================= */
+
 .service-card h3 {
-  font-size: 1.3rem;
-  color: #0f172a;
   margin-top: 0;
   margin-bottom: 12px;
+
+  font-size: 1.3rem;
+  color: var(--carousel-text);
+
   text-align: center;
-  transition: transform 0.5s ease;
 }
 
-/* Imagen en tarjeta */
+/* =========================================================
+     IMAGEN
+     ========================================================= */
+
 .service-img {
   width: 100%;
   height: 180px;
+
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
+
+  border-radius: 0 0 8px 8px;
 }
 
-/* === ESTILOS PARA TARJETAS NO ACTIVAS (Desenfocadas) === */
+/* =========================================================
+     TARJETAS NO ACTIVAS
+     ========================================================= */
+
 .service-card:not(.active) {
-  transform: scale(0.85); /* Se encogen un poco */
+  transform: scale(0.85);
   opacity: 0.8;
 }
 
-/* Desenfoque solo al cuerpo, NO al título */
+/* Desenfoque solamente del contenido */
+
 .service-card:not(.active) .card-body {
-  filter: blur(4px);
-  pointer-events: none; /* No se puede interactuar con lo borroso */
+  filter: blur(1.5px);
+  pointer-events: none;
 }
 
-/* === ESTILOS PARA LA TARJETA CENTRAL (Activa) === */
+/* =========================================================
+     TARJETA ACTIVA
+     ========================================================= */
+
 .service-card.active {
-  transform: scale(1.1); /* Se amplía */
+  transform: scale(1.1);
+
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-  border: 1px solid #0284c7;
+
+  border: 1px solid var(--carousel-primary);
+
   z-index: 2;
 }
 
 .service-card.active .card-body {
-  filter: blur(0px); /* 0 desenfoque */
+  filter: blur(0);
 }
 
-/* Animación del contenido extra (párrafo extra y botón) */
+/* =========================================================
+     CONTENIDO EXTRA
+     ========================================================= */
+
 .extra-content-wrapper {
   display: grid;
-  grid-template-rows: 0fr; /* Oculto por defecto usando Grid */
+  grid-template-rows: 0fr;
+
   transition: grid-template-rows 0.5s ease;
 }
 
 .extra-content {
   overflow: hidden;
+
   opacity: 0;
-  transition: opacity 0.5s ease 0.2s; /* Se desvanece con un pequeño retraso */
+
+  transition: opacity 0.5s ease 0.2s;
 }
 
 .service-card.active .extra-content-wrapper {
-  grid-template-rows: 1fr; /* Muestra el contenido suavemente */
+  grid-template-rows: 1fr;
 }
 
 .service-card.active .extra-content {
@@ -337,46 +420,70 @@ header {
   padding-top: 15px;
 }
 
+/* =========================================================
+     TEXTO
+     ========================================================= */
+
 .detail-text {
-  font-size: 0.9rem;
-  color: #334155;
   margin-bottom: 15px;
+
+  font-size: 0.9rem;
+  color: var(--carousel-text-secondary);
 }
+
+/* =========================================================
+     BOTÓN DE ACCIÓN
+     ========================================================= */
 
 .action-btn {
   width: 100%;
   padding: 10px;
-  background-color: #0284c7;
-  color: white;
+
+  background-color: var(--carousel-primary);
+  color: #ffffff;
+
   border: none;
   border-radius: 8px;
-  font-weight: bold;
+
+  font-weight: 700;
+
   cursor: pointer;
-  transition: background 0.3s;
+
+  transition: background-color 0.3s ease;
 }
 
 .action-btn:hover {
-  background-color: #0369a1;
+  background-color: var(--carousel-primary-dark);
 }
 
-/* Botones Laterales */
+/* =========================================================
+     BOTONES DEL CARRUSEL
+     ========================================================= */
+
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  border: 1px solid #cbd5e1;
-  color: #0284c7;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  width: var(--carousel-button-size);
+  height: var(--carousel-button-size);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: #ffffff;
+  color: var(--carousel-primary);
+
+  border: 1px solid var(--carousel-border);
+  border-radius: 50%;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  z-index: 10;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-btn:disabled {
@@ -384,18 +491,164 @@ header {
   cursor: not-allowed;
 }
 
+/* =========================================================
+     POSICIÓN DE BOTONES
+     ========================================================= */
+
 .prev-btn {
   left: -25px;
 }
+
 .next-btn {
   right: -25px;
 }
 
-@media (max-width: 768px) {
+/* =========================================================
+     TABLET
+     ========================================================= */
+
+@media (max-width: 1024px) {
+  .carousel-wrapper {
+    max-width: 900px;
+  }
+
+  .carousel-container {
+    padding-right: calc(50% - (var(--carousel-card-width) / 2));
+    padding-left: calc(50% - (var(--carousel-card-width) / 2));
+  }
+
   .prev-btn {
     left: 10px;
   }
+
   .next-btn {
     right: 10px;
+  }
+}
+
+/* =========================================================
+     MÓVIL
+     ========================================================= */
+
+@media (max-width: 768px) {
+  .services-carousel-section {
+    padding: 30px 0;
+  }
+
+  .carousel-container {
+    /*
+        Se mantiene el mismo sistema de centrado,
+        pero la tarjeta se adapta al ancho disponible.
+      */
+    --carousel-card-width: min(320px, calc(100vw - 80px));
+
+    gap: 20px;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: calc(50% - (var(--carousel-card-width) / 2));
+    padding-right: calc(50% - (var(--carousel-card-width) / 2));
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+
+  .service-img {
+    height: 160px;
+  }
+
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+
+    font-size: 18px;
+  }
+
+  .prev-btn {
+    left: 10px;
+  }
+
+  .next-btn {
+    right: 10px;
+  }
+}
+
+/* =========================================================
+     MÓVILES PEQUEÑOS
+     ========================================================= */
+
+@media (max-width: 480px) {
+  .services-carousel-section {
+    padding: 20px 0;
+  }
+
+  .carousel-container {
+    --carousel-card-width: calc(100vw - 60px);
+
+    gap: 16px;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .service-card {
+    padding: 18px;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .service-img {
+    height: 150px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+
+    font-size: 16px;
+  }
+
+  .prev-btn {
+    left: 5px;
+  }
+
+  .next-btn {
+    right: 5px;
+  }
+}
+
+/* =========================================================
+     PANTALLAS MUY PEQUEÑAS
+     ========================================================= */
+
+@media (max-width: 360px) {
+  .carousel-container {
+    --carousel-card-width: calc(100vw - 50px);
+  }
+
+  .service-card {
+    padding: 16px;
+  }
+
+  .service-img {
+    height: 135px;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+
+    font-size: 15px;
+  }
+
+  .prev-btn {
+    left: 3px;
+  }
+
+  .next-btn {
+    right: 3px;
   }
 }

@@ -1,33 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("carouselContainer");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  // Función para obtener la distancia de desplazamiento según el ancho del elemento
-  const getScrollAmount = () => {
-    const card = container.querySelector(".service-card");
-    const gap = 20; // Espacio entre tarjetas
-    return card ? card.offsetWidth + gap : 300;
-  };
-
-  // Botón Siguiente
-  nextBtn.addEventListener("click", () => {
-    container.scrollBy({
-      left: getScrollAmount(),
-      behavior: "smooth",
-    });
-  });
-
-  // Botón Anterior
-  prevBtn.addEventListener("click", () => {
-    container.scrollBy({
-      left: -getScrollAmount(),
-      behavior: "smooth",
-    });
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("carouselContainer");
   const cards = document.querySelectorAll(".service-card");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
@@ -58,10 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth",
     });
 
+    // 3. Activar / Desactivar botones si llegamos a los extremos (no infinito)
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex === cards.length - 1;
   }
 
+  // Evento Botón Siguiente
   nextBtn.addEventListener("click", () => {
     if (currentIndex < cards.length - 1) {
       currentIndex++;
@@ -69,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Evento Botón Anterior
   prevBtn.addEventListener("click", () => {
     if (currentIndex > 0) {
       currentIndex--;
@@ -76,7 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Recalcular el centro si el usuario redimensiona la ventana del navegador
   window.addEventListener("resize", updateCarousel);
 
+  // Inicialización (Añade un pequeño timeout para asegurar que el CSS haya cargado)
   setTimeout(updateCarousel, 100);
 });
