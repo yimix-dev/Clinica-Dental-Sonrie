@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Evento Botón Anterior
   prevBtn.addEventListener("click", () => {
     if (currentIndex > 0) {
       currentIndex--;
@@ -51,9 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Recalcular el centro si el usuario redimensiona la ventana del navegador
   window.addEventListener("resize", updateCarousel);
 
-  // Inicialización (Añade un pequeño timeout para asegurar que el CSS haya cargado)
   setTimeout(updateCarousel, 100);
 });

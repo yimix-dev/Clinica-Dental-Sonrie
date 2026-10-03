@@ -141,6 +141,7 @@ header {
   max-width: 620px;
   margin: 0 auto;
   text-align: center;
+  ?
 }
 /* Contenedor principal de las tarjetas */
 .contenedor-tarjetas-nosotros {
@@ -275,7 +276,6 @@ header {
 .services-carousel-section {
   width: 100%;
   overflow: hidden;
-  padding: 40px 0;
   font-family: system-ui, -apple-system, sans-serif;
   text-align: center;
 }
@@ -327,8 +327,6 @@ header {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 
   transition: transform 0.5s ease, box-shadow 0.5s ease;
-
-  text-align: left;
 }
 
 /* =========================================================
@@ -337,12 +335,12 @@ header {
 
 .service-card h3 {
   margin-top: 0;
-  margin-bottom: 12px;
 
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--carousel-text);
 
   text-align: center;
+  color: #0a2540;
 }
 
 /* =========================================================
@@ -355,7 +353,8 @@ header {
 
   object-fit: cover;
 
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px 8px;
+  margin-bottom: 15px;
 }
 
 /* =========================================================
@@ -365,13 +364,6 @@ header {
 .service-card:not(.active) {
   transform: scale(0.85);
   opacity: 0.8;
-}
-
-/* Desenfoque solamente del contenido */
-
-.service-card:not(.active) .card-body {
-  filter: blur(1.5px);
-  pointer-events: none;
 }
 
 /* =========================================================
@@ -425,10 +417,12 @@ header {
      ========================================================= */
 
 .detail-text {
-  margin-bottom: 15px;
-
+  margin-bottom: 20px;
+  text-align: center;
   font-size: 0.9rem;
-  color: var(--carousel-text-secondary);
+  text-wrap: balance;
+  color: #474c53;
+  font-weight: 500;
 }
 
 /* =========================================================
@@ -437,7 +431,7 @@ header {
 
 .action-btn {
   width: 100%;
-  padding: 10px;
+  padding: 15px;
 
   background-color: var(--carousel-primary);
   color: #ffffff;
@@ -446,10 +440,11 @@ header {
   border-radius: 8px;
 
   font-weight: 700;
-
+  font-size: 1rem;
   cursor: pointer;
 
   transition: background-color 0.3s ease;
+  font-family: var(--fuente-secundaria);
 }
 
 .action-btn:hover {
@@ -651,4 +646,22 @@ header {
   .next-btn {
     right: 3px;
   }
+}
+/* Descripción breve */
+.short-text {
+  opacity: 1;
+  max-height: 100px;
+  transition: opacity 0.3s ease, max-height 0.5s ease;
+  text-align: center;
+  text-wrap: balance;
+  margin-top: 10px;
+  font-family: var(--fuente-secundaria);
+}
+
+/* Cuando la tarjeta está activa, desaparece */
+.service-card.active .short-text {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  overflow: hidden;
 }
