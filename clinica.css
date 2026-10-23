@@ -7,7 +7,6 @@
   --azul-claro: #00a3e0;
   --blanco: #ffffff;
 }
-
 /* Fuerza a que absolutamente todo el sitio use sans-serif por defecto */
 *,
 *::before,
@@ -727,7 +726,7 @@ header {
   padding-top: 45px;
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
   width: 100%;
 }
 
@@ -737,6 +736,8 @@ header {
   margin: 0;
   overflow: hidden;
   border-radius: 12px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .doctor-imagen img {
@@ -775,9 +776,11 @@ header {
 .doctor-card-content,
 .doctor-info {
   padding: 24px;
+  gap: 4px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  align-items: flex-start;
 }
 
 /* 1. Etiqueta de Especialidad */
@@ -786,7 +789,7 @@ header {
   font-family: var(--fuente-secundaria);
   font-size: 12px;
   font-weight: 700;
-  color: var(--azul-claro, #00a3e0);
+  color: #475569;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0 0 6px 0;
@@ -821,6 +824,9 @@ header {
   color: #00a3e0;
   font-weight: 600;
   text-decoration: none;
+  align-items: center;
+  font-size: var(--fuente-secundaria);
+  font-size: 17px;
 }
 
 .link-agendar span {
